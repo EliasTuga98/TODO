@@ -1,0 +1,9 @@
+POST https://localhost:3000/item/new_item HTTP/1.1
+content-type: application/json
+{
+    "desciption": "sample"
+}
+#####
+GET https://localhost:3000/item HTTP/1.1
+
+#####
