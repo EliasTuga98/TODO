@@ -1,0 +1,17 @@
+.input{
+    height: 100px;
+    width: 160px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    flex: 1;
+}
+input:focus{
+    background-color: none;
+}
+button{
+    nav-right: 10px;
+
+    background-color: rgb(203, 214, 226);
+}

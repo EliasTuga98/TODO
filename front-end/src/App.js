@@ -1,46 +1,31 @@
 import './App.css';
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import Input from './components/Input'
-import { TodoItem } from './components/TodoItem';
-import { Provider } from 'react-redux';
-import ItemProvider from './features/ItemProvider'
+import Input from './components/Input/Input'
+import { TodoItem } from './components/TodoItem/TodoItem';
+import { Provider,useSelector } from 'react-redux';
 import store from './store';
+import { selectTodoList } from './features/todoSlice';
 
-const todolist=[{
-  id:Date.now(),
-  description : 'todo',
-  state:false,
-  },
-  {
-    id:Date.now(),
-  description : 'todo',
-  state:true,
-  }
-
-]
-
-function App() {
-
+function App() {  
+  const todolist = useSelector(selectTodoList);
   return (
-    <Provider store={store} >    
-    <div className="App">
-      <div className="App__container">
+          
+    <div className="app">
+      <h1>To do List</h1>
+      <div className="app__container">
         <div className="app__todocontainer">
-          {todolist.map(item=>(
+          {
+          todolist.map(item=>(
           <TodoItem 
           description={item.description}
           state={item.state}
           id={item.id}/>
-            ))}
-        </div>
-        <Input/>
-      
-       
+            ))
+            }
+        </div>      
+       <Input/>
       </div>
-    </div>
-    </Provider>
+    </div>  
   );
 }
 

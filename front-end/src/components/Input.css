@@ -1,9 +1,0 @@
-.input{
-    height: 100px;
-    width: 160px;
-    background-color: darkgreen;
-    display: grid;
-}
-input{
-    background-color: none;
-}
